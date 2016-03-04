@@ -26,6 +26,9 @@ gem 'autoprefixer-rails'
 gem 'compass-rails'
 gem 'carrierwave'
 gem 'cloudinary'
+gem 'epic-editor-rails'
+gem 'mail_form'
+gem 'simple_form'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -41,6 +44,8 @@ group :development, :test do
   gem 'byebug'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
+  gem 'factory_girl'
+  gem 'letter_opener'
 end
 group :production do
   gem 'pg'

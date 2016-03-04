@@ -1,8 +1,12 @@
 require 'test_helper'
 
 class ProductsControllerTest < ActionController::TestCase
+  include Devise::TestHelpers
+
   setup do
     @product = products(:one)
+    #@request.env["devise.mapping"] = Devise.mappings[:admin]
+    #sign_in FactoryGirl.create(:admin)
   end
 
   test "should get index" do
@@ -45,5 +49,13 @@ class ProductsControllerTest < ActionController::TestCase
     end
 
     assert_redirected_to products_path
+  end
+  FactoryGirl.define do
+    factory :account do
+      email { Faker::Internet.email }
+      password "password"
+      password_confirmation "password"
+      confirmed_at Date.today
+    end
   end
 end

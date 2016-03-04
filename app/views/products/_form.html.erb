@@ -20,7 +20,10 @@
       </div>
       <div class="field">
         <%= f.label :description %><br>
-        <%= f.text_area :description %>
+        <%= f.hidden_field :description %>
+        <div id="epiceditor">
+
+        </div>
       </div>
       <div class="field">
         <%= f.label :price %><br>
@@ -40,3 +43,15 @@
     <% end %>
   </fieldset>
 </div>
+
+<script type="text/javascript">
+  var editor = new EpicEditor({
+    file:{
+      name:"nuevo_product"
+    }
+  });
+  editor.load();
+  $("#new_product").on("submit",function() {
+    $("#product_description").val(editor.exportFile("nuevo_product","html"));
+  });
+</script>

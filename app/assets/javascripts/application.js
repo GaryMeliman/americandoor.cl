@@ -15,4 +15,5 @@
 //= require groundworkcss/libs/modernizr-2.6.2.min
 //= require groundworkcss/all
 //= require turbolinks
+//= require epiceditor
 //= require_tree .
