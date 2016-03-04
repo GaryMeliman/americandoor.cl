@@ -42,6 +42,7 @@ GEM
       execjs
     aws_cf_signer (0.1.3)
     bcrypt (3.1.10)
+    bhm-google-maps (0.3.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
@@ -233,6 +234,7 @@ PLATFORMS
 
 DEPENDENCIES
   autoprefixer-rails
+  bhm-google-maps
   byebug
   carrierwave
   cloudinary
