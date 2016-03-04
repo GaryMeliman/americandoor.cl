@@ -5,7 +5,7 @@ class CreateProducts < ActiveRecord::Migration
       t.text :description
       t.string :cover
       t.decimal :price
-      t.references :admin, index: true, foreign_key: true
+      #t.references :admin, index: true, foreign_key: true
       t.references :category, index: true, foreign_key: true
 
       t.timestamps null: false
