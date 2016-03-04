@@ -1,0 +1,38 @@
+<header class="padded">
+  <div class="container">
+    <div class="row">
+      <div class="one half">
+        <h2 class="logo">
+          <%= link_to root_path do %>
+            <%= image_tag "logodoors.gif" %>
+            American doors
+          <% end %>
+        </h2>
+      </div>
+      <div class="one half">
+        <p class="small double-pad-top no-pad-small-tablet align-right align-left-small-tablet">
+          <%= link_to root_path do %>
+            <%= image_tag "logopanel.gif" %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <nav role="navigation" class="nav gap-top">
+      <ul role="menubar">
+        <li>
+          <%= link_to root_path do %>
+            <i class="icon-home">
+              Home
+            </i>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to "Quienes somos", root_path %>
+        </li>
+        <li>
+          <%= link_to "Contacto", root_path %>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
