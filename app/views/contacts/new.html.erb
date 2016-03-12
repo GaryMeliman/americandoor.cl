@@ -1,61 +1,66 @@
-<div class="two thirds">
-  <%= form_for @contact do |f| %>
-    <% if @contact.errors.any? %>
-      <div id="error_explanation">
-        <h2>
-          <%= "#{pluralize(@contact.errors.count, "error")} prohibited this message from being sent:" %>
-        </h2>
+<div class="row">
+  <div class="col s12 l9">
+    <fieldset>
+      <legend>Contactanos</legend>
+      <%= form_for @contact do |f| %>
+        <% if @contact.errors.any? %>
+          <div id="error_explanation">
+            <h2>
+              <%= "#{pluralize(@contact.errors.count, "error")} prohibited this message from being sent:" %>
+            </h2>
 
-        <ul>
-          <% @contact.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-        <ul>
-      </div>
-    <% end %>
+            <ul>
+              <% @contact.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+            <ul>
+          </div>
+        <% end %>
 
-    <div class="field">
-      <%= f.label :name %>
-      <%= f.text_field :name %>
-    </div>
+        <div class="input-field">
+          <%= f.label :name %>
+          <%= f.text_field :name %>
+        </div>
 
-    <div class="field">
-      <%= f.label :email %>
-      <%= f.email_field :email %>
-    </div>
+        <div class="input-field">
+          <%= f.label :email %>
+          <%= f.email_field :email %>
+        </div>
 
-    <div class="field">
-      <%= f.label :subject %>
-      <%= f.text_field :subject %>
-    </div>
+        <div class="input-field">
+          <%= f.label :subject %>
+          <%= f.text_field :subject %>
+        </div>
 
-    <div class="field">
-      <%= f.label :content %>
-      <%= f.text_area :content %>
-    </div>
+        <div class="input-field">
+          <%= f.label :content %>
+          <%= f.text_area :content, class: "materialize-textarea" %>
+        </div>
 
-    <div class="actions">
-      <%= f.submit 'Send', class: 'button' %>
-    </div>
-  <% end %>
-</div>
-<div class="one third padded">
-  <iframe class="pull-right contact-map" src="https://www.google.com/maps/embed/v1/place?q=place_id:EkhMb3MgQ2FycmVyYSAxMDk5LCBDb25jZXBjacOzbiwgQ29uY2VwY2nDs24sIFJlZ2nDs24gZGVsIELDrW8gQsOtbywgQ2hpbGU&key=AIzaSyAyIM6imt013BQ_qWZr-sL2WLN_Yc5PAdQ" allowfullscreen></iframe>
-  <p class="small double-pad-top no-pad-small-tablet align-right align-left-small-tablet pull-right">
-    Showroom Oficina Central Concepción:
-    <br>
-    Los Carrera 1099. Fono 041 - 2464957
-    <br>
-    Oficina Santiago:
-    <br>
-    Telefono Movil 58590927
-    <br>
-    Oficina Puerto Montt
-    <br>
-    Representante Zonal
-    <br>
-    Ronald Eskuche G.
-    <br>
-    Cel 58590931
-  </p>
+        <div>
+          <%= f.submit 'Enviar', class: 'btn waves-effect waves-light' %>
+        </div>
+      <% end %>
+    </fieldset>
+  </div>
+  <div class="col s12 l3">
+    <iframe class="contact-map" src="https://www.google.com/maps/embed/v1/place?q=place_id:EkhMb3MgQ2FycmVyYSAxMDk5LCBDb25jZXBjacOzbiwgQ29uY2VwY2nDs24sIFJlZ2nDs24gZGVsIELDrW8gQsOtbywgQ2hpbGU&key=AIzaSyAyIM6imt013BQ_qWZr-sL2WLN_Yc5PAdQ" allowfullscreen></iframe>
+    <p>
+      Showroom Oficina Central Concepción:
+      <br>
+      Los Carrera 1099. Fono 041 - 2464957
+      <br>
+      Oficina Santiago:
+      <br>
+      Telefono Movil 58590927
+      <br>
+      Oficina Puerto Montt
+      <br>
+      Representante Zonal
+      <br>
+      Ronald Eskuche G.
+      <br>
+      Cel 58590931
+    </p>
+  </div>
 </div>

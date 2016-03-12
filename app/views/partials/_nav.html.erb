@@ -1,38 +1,35 @@
-<header class="padded">
-  <div class="container">
-    <div class="row">
-      <div class="one half">
-        <h2 class="logo">
-          <%= link_to root_path do %>
-            <%= image_tag "logodoors.gif" %>
-            American doors
-          <% end %>
-        </h2>
-      </div>
-      <div class="one half">
-        <p class="small double-pad-top no-pad-small-tablet align-right align-left-small-tablet">
-          <%= link_to root_path do %>
-            <%= image_tag "logopanel.gif" %>
-          <% end %>
-        </p>
-      </div>
-    </div>
-    <nav role="navigation" class="nav gap-top">
-      <ul role="menubar">
-        <li>
-          <%= link_to root_path do %>
-            <i class="icon-home">
-              Home
-            </i>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to "Quienes somos", about_index_path, remote:true %>
-        </li>
-        <li>
-          <%= link_to "Contacto", new_contact_path %>
-        </li>
-      </ul>
-    </nav>
+<nav class="white" role="navigation">
+  <div class="nav-wrapper container">
+    <%= link_to "Americandoors", root_path, class: "brand-logo", id: "logo-container" %>
+    <ul class="right hide-on-med-and-down">
+      <li>
+        <%= link_to "Panel de administración", admin_dashboard_index_path if user_signed_in? %>
+      </li>
+      <li>
+        <%= link_to "Cerrar sesión", destroy_user_session_path, :method => :delete if user_signed_in? %>
+      </li>
+      <li>
+        <%= link_to "Catalogo de productos", products_path %>
+      </li>
+      <li>
+        <%= link_to "Contacto", new_contact_path %>
+      </li>
+    </ul>
+
+    <ul id="nav-mobile" class="side-nav">
+      <li>
+        <%= link_to "Panel de administración", admin_dashboard_index_path if user_signed_in? %>
+      </li>
+      <li>
+        <%= link_to "Cerrar sesión", destroy_user_session_path, :method => :delete if user_signed_in? %>
+      </li>
+      <li>
+        <%= link_to "Catalogo de productos", products_path %>
+      </li>
+      <li>
+        <%= link_to "Contacto", new_contact_path %>
+      </li>
+    </ul>
+    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
   </div>
-</header>
+</nav>

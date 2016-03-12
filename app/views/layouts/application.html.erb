@@ -4,14 +4,20 @@
   <title>AmericandoorsCl</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="<%= 'teal loaded' if request.fullpath == '/wp_admin_login' %>">
 <%= render "partials/nav" %>
 
-<div class="container" id="main-container">
-  <p class="success message dismissible"><%= notice %></p>
-  <p class="error message dismissible"><%= alert %></p>
+<% if notice.present? %>
+  <p class="card-panel teal lighten-2 center"><%= notice %></p>
+<% end %>
+<% if alert.present? %>
+  <p class="card-panel red lighten-2 center"><%= alert %></p>
+<% end %>
+
+<div id="main-container">
   <%= yield %>
 </div>
 

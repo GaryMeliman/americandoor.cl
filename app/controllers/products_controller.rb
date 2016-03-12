@@ -1,11 +1,11 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_admin!, except: [:show, :index]
+  before_action :authenticate_user!, except: [:show, :index]
   # GET /products
   # GET /products.json
   def index
     @products = Product.all
-    @category = Category.all
+    @categories = Category.all
     respond_to :html, :js
   end
 
@@ -26,7 +26,7 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
-    @product = current_admin.products.new(product_params)
+    @product = Product.new(product_params)
 
     respond_to do |format|
       if @product.save

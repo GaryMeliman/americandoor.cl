@@ -5,3 +5,5 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+#User.create!(username: 'admin', password: 'password', password_confirmation: 'password')
+Category.create!([{ name: 'Puertas recidenciales' },{ name: 'Puertas de oficinas' }, { name: 'Puertas industriales' }])

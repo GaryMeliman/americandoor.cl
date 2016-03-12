@@ -1,12 +1,13 @@
-<div class="one fourth three-up-small-tablet two-up-mobile padded bounceInDown animated">
-  <div class="box">
-    <h4 data-compression="7" data-max="20" class="responsive align-center zero" style="font-size: 20px;">
-      <span class="responsiveText-wrapper">
-        <%= link_to product.name, product %>
-      </span>
-    </h4>
-    <%= image_tag product.cover.url.to_s %>
-    <p class="truncate">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    <p><%= number_to_currency(product.price, unit: "$")%><i class="icon-shopping-cart pull-right large"></i></p>
+<div class="col s4">
+  <div class="card hoverable">
+    <div class="card-image">
+      <%= image_tag product.cover.url.to_s %>
+    </div>
+    <div class="card-content">
+      <p><%= product.name %> <br> <%= number_to_currency(product.price, unit: "$")%> CLP</p>
+    </div>
+    <div class="card-action">
+      <%= link_to "Ver detalles", product, class: "btn btn-default waves-effect waves-light" %>
+    </div>
   </div>
 </div>

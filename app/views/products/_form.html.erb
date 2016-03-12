@@ -1,10 +1,10 @@
 <div class="container">
   <fieldset>
     <legend><%= title %> producto</legend>
-    <%= form_for(@product) do |f| %>
+    <%= form_for(@product ,:html => {:id => "product_form"} ) do |f| %>
       <% if @product.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+        <div class="card-panel red lighten-2">
+          <h5>Corrija los siguientes errores:</h5>
 
           <ul>
           <% @product.errors.full_messages.each do |message| %>
@@ -14,44 +14,55 @@
         </div>
       <% end %>
 
-      <div class="field">
-        <%= f.label :name %><br>
-        <%= f.text_field :name %>
-      </div>
-      <div class="field">
-        <%= f.label :description %><br>
-        <%= f.hidden_field :description %>
-        <div id="epiceditor">
-
+      <div class="row">
+        <div class="input-field col s12">
+          <%= f.label :name, "Nombre del producto" %><br>
+          <%= f.text_field :name %>
         </div>
-      </div>
-      <div class="field">
-        <%= f.label :price %><br>
-        <%= f.number_field :price %>
-      </div>
-      <div class="field">
-        <%= f.label :cover %><br>
-        <%= f.file_field :cover %>
-      </div>
-      <div class="field">
-        <%= f.label :category %>
-        <%= f.collection_select :category_id, Category.all, :id, :name, :prompt => "seleccione categoria .." %>
-      </div>
-      <div class="actions">
-        <%= f.submit %>
+        <div class="input-field col s6">
+          <%= f.label :price %><br>
+          <%= f.number_field :price %>
+        </div>
+        <div class="input-field col s6">
+          <br>
+          <%= f.collection_select :category_id, Category.all, :id, :name, :prompt => "Seleccione una categoría .." %>
+        </div>
+        <div class="file-field input-field col s12">
+          <div class="btn">
+              <span>Imagen</span>
+              <%= f.file_field :cover   %>
+          </div>
+          <div class="file-path-wrapper">
+              <input class="file-path validate" type="text">
+          </div>
+        </div>
+        <div class="col s12">
+          <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" class="right">Ayuda</a>
+          <%= f.label :description %><br>
+          <%= f.hidden_field :description %>
+          <div id="epiceditor">
+
+          </div>
+        </div>
+        <div class="input-field col s6">
+          <%= f.submit "Guardar", class: "btn waves-effect waves-light" %>
+        </div>
       </div>
     <% end %>
   </fieldset>
 </div>
 
 <script type="text/javascript">
+  $(document).ready(function() {
+     $('select').material_select();
+   });
   var editor = new EpicEditor({
     file:{
       name:"nuevo_product"
     }
   });
   editor.load();
-  $("#new_product").on("submit",function() {
+  $("#product_form").on("submit",function() {
     $("#product_description").val(editor.exportFile("nuevo_product","html"));
   });
 </script>

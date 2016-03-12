@@ -13,5 +13,6 @@
  *= require_tree .
  *= require_self
  */
-@import 'groundwork_settings';
-@import 'groundworkcss/groundwork';
+@import "materialize";
+@import "materialize/extras/nouislider";
+@import "material_icons"

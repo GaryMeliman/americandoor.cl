@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row">
+    <div class="col s12">
+      <h4>Productos</h4>
+      <%= link_to "Agregar producto", new_product_path %>
+      <table>
+        <thead>
+          <tr>
+            <th data-field="name">Nombre</th>
+            <th data-field="price">Precio</th>
+            <th data-field="Category">Categoria</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @products.each do |product| %>
+            <tr>
+              <td><%= product.name %></td>
+              <td><%= number_to_currency(product.price, unit: "$")%></td>
+              <td><%= product.category.name %><td>
+              <td><%= link_to "Ver", product %><td>
+              <td><%= link_to "Editar", edit_product_path(product) %><td>
+              <td><%= link_to "Borrar", product, method: :delete, data: { confirm: 'Desea eliminiar el producto?' }%><td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <hr>
+  </div>
+  <div class="row">
+    <div class="col s12">
+      <h4>Categoría</h4>
+      <%= link_to "Agregar categoría", new_category_path %>
+      <table>
+        <thead>
+          <tr>
+            <th data-field="name">Nombre</th>
+            <th data-field="pruducts_count">Cantidad de productos</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @categories.each do |category| %>
+          <tr>
+            <td><%= category.name %></td>
+            <td><%= category.products.count %><td>
+            <td><%= link_to "Ver", category %><td>
+            <td><%= link_to "Editar", edit_category_path(category) %><td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
