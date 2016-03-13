@@ -1,7 +1,10 @@
 <nav class="white" role="navigation">
-  <div class="nav-wrapper container">
+  <div class="nav-wrapper <%= 'container' unless user_signed_in? %>">
     <%= link_to "Americandoors", root_path, class: "brand-logo", id: "logo-container" %>
     <ul class="right hide-on-med-and-down">
+      <li>
+        <%= link_to "Cambiar contraseña", edit_user_registration_path if user_signed_in? %>
+      </li>
       <li>
         <%= link_to "Panel de administración", admin_dashboard_index_path if user_signed_in? %>
       </li>
@@ -17,6 +20,9 @@
     </ul>
 
     <ul id="nav-mobile" class="side-nav">
+      <li>
+        <%= link_to "Change your password", edit_user_registration_path if user_signed_in? %>
+      </li>
       <li>
         <%= link_to "Panel de administración", admin_dashboard_index_path if user_signed_in? %>
       </li>
