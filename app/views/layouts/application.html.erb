@@ -3,23 +3,24 @@
 <head>
   <title>AmericandoorsCl</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <%= csrf_meta_tags %>
 </head>
-<body class="<%= 'teal loaded' if request.fullpath == '/wp_admin_login' %>">
-<%= render "partials/nav" %>
+<body>
+  <%= render "partials/nav" %>
 
-<% if notice.present? %>
-  <p class="card-panel teal lighten-2 center"><%= notice %></p>
-<% end %>
-<% if alert.present? %>
-  <p class="card-panel red lighten-2 center"><%= alert %></p>
-<% end %>
+  <% if notice.present? %>
+    <p class="alert alert-danger alert-dismissible"><%= notice %></p>
+  <% end %>
+  <% if alert.present? %>
+    <p class="alert alert-success alert-dismissible"><%= alert %></p>
+  <% end %>
 
-<div id="main-container">
-  <%= yield %>
-</div>
+  <div id="main-container">
+    <%= yield %>
+  </div>
 
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>

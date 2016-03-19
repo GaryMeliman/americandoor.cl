@@ -121,10 +121,6 @@ GEM
     mail_form (1.5.1)
       actionmailer (>= 3.2, < 5)
       activemodel (>= 3.2, < 5)
-    material_icons (2.0.1)
-      railties (>= 3.2)
-    materialize-sass (0.97.5)
-      sass (~> 3.3)
     mime-types (2.99.1)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
@@ -243,8 +239,6 @@ DEPENDENCIES
   jquery-rails
   letter_opener
   mail_form
-  material_icons
-  materialize-sass
   pg
   rails (= 4.2.5)
   rails_12factor

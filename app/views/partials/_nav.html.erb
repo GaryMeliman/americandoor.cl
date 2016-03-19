@@ -1,4 +1,4 @@
-<nav class="white" role="navigation">
+<!-- <nav class="white" role="navigation">
   <div class="nav-wrapper <%= 'container' unless user_signed_in? %>">
     <%= link_to "Americandoors", root_path, class: "brand-logo", id: "logo-container" %>
     <ul class="right hide-on-med-and-down">
@@ -38,4 +38,146 @@
     </ul>
     <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
   </div>
-</nav>
+</nav> -->
+<header>
+  <div class="navbar">
+
+    <div class="navbar-header">
+      <div class="container">
+
+        <ul class="info pull-left">
+          <li><a href="#"><i class="icon-mail-1 contact"></i> email@email.com</a></li>
+          <li><i class="icon-mobile contact"></i> +056 912 12 12 12</li>
+        </ul>
+
+        <ul class="social pull-right">
+          <li><a href="#"><i class="icon-s-facebook"></i></a></li>
+          <li><a href="#"><i class="icon-s-gplus"></i></a></li>
+          <li><a href="#"><i class="icon-s-twitter"></i></a></li>
+        </ul>
+
+        <%= link_to root_path , class: "navbar-brand" do %>
+          <%= cl_image_tag "logodoors_soqcbl.gif", class: "logo" %>
+        <% end %>
+
+        <a class="btn responsive-menu pull-right" data-toggle="collapse" data-target=".navbar-collapse"><i class='icon-menu-1'></i></a>
+
+      </div>
+    </div>
+
+    <div class="yamm">
+      <div class="navbar-collapse collapse">
+        <div class="container">
+
+          <%= link_to root_path , class: "navbar-brand" do %>
+            <%= cl_image_tag "logodoors_soqcbl.gif", class: "logo" %>
+          <% end %>
+
+          <ul class="nav navbar-nav">
+
+            <li>
+              <%= link_to "Inicio", root_path %>
+            </li>
+
+            <li class="dropdown">
+              <%= link_to "Productos", products_path, class: "dropdown-toggle js-activated" %>
+
+              <ul class="dropdown-menu">
+                <li>
+                  <%= link_to "Todos los productos", products_path %>
+                </li>
+                <% Category.all.each do |category| %>
+                  <li>
+                    <%= link_to category.name, products_path %>
+                  </li>
+                <% end %>
+              </ul>
+            </li>
+
+            <li>
+              <a href="#">Blog</a>
+            </li>
+
+            <li class="dropdown yamm-fullwidth">
+              <a href="#" class="dropdown-toggle js-activated">Más de nosotros</a>
+
+              <ul class="dropdown-menu yamm-dropdown-menu">
+                <li>
+                  <div class="yamm-content row">
+
+                    <div class="col-sm-6 inner">
+                      <h4>Últimos trabajos</h4>
+
+                      <div class="row thumbs gap-xs">
+
+                        <div class="col-xs-6 thumb">
+                          <figure class="icon-overlay icn-link">
+                            <a href="portfolio-post.html"><img src="assets/images/art/work02.jpg" alt=""></a>
+                          </figure>
+                        </div>
+
+                        <div class="col-xs-6 thumb">
+                          <figure class="icon-overlay icn-link">
+                            <a href="portfolio-post.html"><img src="assets/images/art/work03.jpg" alt=""></a>
+                          </figure>
+                        </div>
+
+                        <div class="col-xs-6 thumb">
+                          <figure class="icon-overlay icn-link">
+                            <a href="portfolio-post.html"><img src="assets/images/art/work04.jpg" alt=""></a>
+                          </figure>
+                        </div>
+
+                        <div class="col-xs-6 thumb">
+                          <figure class="icon-overlay icn-link">
+                            <a href="portfolio-post.html"><img src="assets/images/art/work05.jpg" alt=""></a>
+                          </figure>
+                        </div>
+
+                        <div class="col-xs-6 thumb">
+                          <figure class="icon-overlay icn-link">
+                            <a href="portfolio-post.html"><img src="assets/images/art/work06.jpg" alt=""></a>
+                          </figure>
+                        </div>
+
+                        <div class="col-xs-6 thumb">
+                          <figure class="icon-overlay icn-link">
+                            <a href="portfolio-post.html"><img src="assets/images/art/work07.jpg" alt=""></a>
+                          </figure>
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <div class="col-sm-6 inner">
+                      <h4>Acerca de</h4>
+                      <p>Voluptat ibusaped molorporro consequ idustibus. Reressi morum ut dolessiti tem nihicid ernatum, coria volore non pro officat ut autem accaborem conet. Omnis peribus qui dolent praeperrum coria.</p>
+                      <p>Equam conesti occum dolorest, quae venderes quistius, comnitatur sae dinam nonseculpa cum fugit is verciam.</p>
+                      <%= link_to "Mas", about_index_path, class: "btn btn-primary" %>
+                    </div>
+
+                  </div>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <%= link_to "Contactanos", new_contact_path %>
+            </li>
+            <li>
+              <%= link_to "Cambiar contraseña", edit_user_registration_path if user_signed_in? %>
+            </li>
+            <li>
+              <%= link_to "Panel de administración", admin_dashboard_index_path if user_signed_in? %>
+            </li>
+            <li>
+              <%= link_to "Cerrar sesión", destroy_user_session_path, :method => :delete if user_signed_in? %>
+            </li>
+
+          </ul>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

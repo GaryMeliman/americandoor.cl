@@ -15,5 +15,3 @@
 //= require turbolinks
 //= require epiceditor
 //= require_tree .
-//= require materialize-sprockets
-//= require materialize/extras/nouislider
