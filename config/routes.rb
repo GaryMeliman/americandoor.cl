@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  mount RailsAdmin::Engine => '/ameadmin', as: 'rails_admin'
   devise_for :users, :skip => [:sessions]
   as :user do
     get 'wp_admin_login' => 'devise/sessions#new', :as => :new_user_session

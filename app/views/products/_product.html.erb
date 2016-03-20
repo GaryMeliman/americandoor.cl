@@ -1,4 +1,4 @@
-<div class="col s4">
+<!-- <div class="col s4">
   <div class="card hoverable">
     <div class="card-image">
       <%= image_tag product.cover.url.to_s %>
@@ -10,4 +10,25 @@
       <%= link_to "Ver detalles", product, class: "btn btn-default waves-effect waves-light" %>
     </div>
   </div>
-</div>
+</div> -->
+<li class="item thumb <%= product.category.name.downcase.remove ' ' %>">
+  <figure>
+
+    <div class="icon-overlay icn-link">
+      <%= link_to product_path(product) do %>
+        <%= image_tag product.cover.url.to_s %>
+      <% end %>
+    </div>
+
+    <figcaption class="bordered no-top-border">
+      <div class="info">
+        <h4><%= link_to product.name, product_path(product) %></h4>
+        <p><%= product.category.name %></p>
+        <p>
+          <%= number_to_currency(product.price, unit: "$")%> CLP
+        </p>
+      </div>
+    </figcaption>
+
+  </figure>
+</li>

@@ -1,15 +1,70 @@
-<div class="row">
-  <div class="col s3">
-    <div class="sidebar">
-      <div class="collection">
-        <%= link_to "Todas las categorias", products_path, remote: true, class: "collection-item active" %>
-        <%= render @categories %>
+<main>
+
+  <section id="portfolio">
+
+    <div class="container inner">
+      <div class="row">
+        <div class="col-md-8 col-sm-9 center-block text-center">
+          <header>
+            <h1>Nuestros productos</h1>
+            <p>Magnis modipsae voloratati andigen daepeditem quiate re porem que aut labor. Laceaque eictemperum quiae sitiorem rest non restibusaes.</p>
+          </header>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="col s9">
-    <div class="row text-center" id="products-container">
-      <%= render @products %>
+
+    <div class="container inner-bottom">
+      <div class="row">
+        <div class="col-sm-12 portfolio">
+
+          <ul class="filter text-center">
+            <li><a href="#" data-filter="*" class="active">All</a></li>
+            <% @categories.each do |category| %>
+              <li>
+                <a href="#" data-filter=".<%= category.name.downcase.remove(" ") %>"><%= category.name %></a>
+              </li>
+            <% end %>
+          </ul>
+
+          <ul class="items col-3 gap">
+
+            <%= render @products %>
+
+          </ul>
+
+        </div>
+      </div>
     </div>
-  </div>
-</div>
+  </section>
+
+  <section id="share" class="light-bg">
+    <div class="container">
+
+      <div class="col-sm-4 reset-padding">
+        <a href="#" class="btn-share-md">
+          <p class="name">Facebook</p>
+          <i class="icon-s-facebook"></i>
+          <p class="counter">1080</p>
+        </a>
+      </div>
+
+      <div class="col-sm-4 reset-padding">
+        <a href="#" class="btn-share-md">
+          <p class="name">Twitter</p>
+          <i class="icon-s-twitter"></i>
+          <p class="counter">1263</p>
+        </a>
+      </div>
+
+      <div class="col-sm-4 reset-padding">
+        <a href="#" class="btn-share-md">
+          <p class="name">Google +</p>
+          <i class="icon-s-gplus"></i>
+          <p class="counter">963</p>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+</main>
