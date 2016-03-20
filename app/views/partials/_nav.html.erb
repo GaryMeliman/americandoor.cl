@@ -53,11 +53,7 @@
               </ul>
             </li>
 
-            <li>
-              <a href="#">Blog</a>
-            </li>
-
-            <li class="dropdown yamm-fullwidth">
+            <!-- <li class="dropdown yamm-fullwidth">
               <a href="#" class="dropdown-toggle js-activated">Más de nosotros</a>
 
               <ul class="dropdown-menu yamm-dropdown-menu">
@@ -118,14 +114,14 @@
                   </div>
                 </li>
               </ul>
-            </li>
+            </li> -->
 
             <li>
               <%= link_to "Contactanos", new_contact_path %>
             </li>
-            <li>
+            <!-- <li>
               <%= link_to "Cambiar contraseña", edit_user_registration_path if user_signed_in? %>
-            </li>
+            </li> -->
             <li>
               <%= link_to "Panel de administración", admin_dashboard_index_path if user_signed_in? %>
             </li>

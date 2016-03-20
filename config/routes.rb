@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources "users", only: [:new, :create]
+
+  put 'users/create'
+
   mount RailsAdmin::Engine => '/ameadmin', as: 'rails_admin'
   devise_for :users, :skip => [:sessions]
   as :user do
